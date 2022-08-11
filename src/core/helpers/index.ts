@@ -132,17 +132,11 @@ function onCheckFilterAirlines(arrFlights: voyage[]): voyage[] {
 function onCheckFilterPrice(arrFlights: voyage[]): voyage[] {
 	const oldArrFlights: voyage[] = JSON.parse(JSON.stringify(arrFlights));
 
-	console.log(document.getElementById('min-price'))
 	const minPriceInput = (<HTMLInputElement>document.getElementById('min-price')).value;
-	console.log('minPriceInput', minPriceInput)
 	const minPriceValue = parseInt(minPriceInput || '0');
-	console.log('minPriceValue',minPriceValue)
-	
 
 	const maxPriceInput = (<HTMLInputElement>document.getElementById('max-price')).value;
-	console.log('maxPriceInput', maxPriceInput)
 	const maxPriceValue = parseInt(maxPriceInput || '1000000');
-	console.log('maxPriceValue', maxPriceValue)
 
 	const newArrFlights = oldArrFlights.filter((item) => (
 		minPriceValue <= +item.flight.price.total.amount && +item.flight.price.total.amount <= maxPriceValue))

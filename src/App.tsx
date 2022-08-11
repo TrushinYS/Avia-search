@@ -13,7 +13,6 @@ const App:FC = () => {
 		const flying = await loadFlights();
 		setFlights(flying);
 		setCopyFlights(flying);
-		console.log(flying);
 	}
 
 	useEffect(() => {
